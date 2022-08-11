@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{7b1c109d-cee5-4b8c-aa4b-a9dc468bb642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{a0240e6e-bf82-403e-8e47-234b6091d97d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Obj">
+      <UniqueIdentifier>{594808c4-1a58-43eb-9bd2-01873e449614}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Obj\Bone">
+      <UniqueIdentifier>{7d775f49-0a2e-43d0-aba6-8a262975c70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Address">
+      <UniqueIdentifier>{a1ad7d16-c6bf-4479-aead-9c98512c9058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\View">
+      <UniqueIdentifier>{1ea11148-db12-48c6-bdc0-928a9ca501bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OwnImGui">
+      <UniqueIdentifier>{0a11f750-ee7e-4f69-8eae-50d00d4ee9f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Others">
+      <UniqueIdentifier>{c9393378-efa0-450e-ba0b-a7823bff6bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entrance">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{ba9913e9-70b6-47d3-929d-02bdbd7ec6b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Radar">
+      <UniqueIdentifier>{967f80a2-5eba-4add-a995-254fbd20c9c4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Entrance</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Game\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="Bones.cpp">
+      <Filter>Game\Obj\Bone</Filter>
+    </ClCompile>
+    <ClCompile Include="GameView.cpp">
+      <Filter>Game\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions.cpp">
+      <Filter>Others</Filter>
+    </ClCompile>
+    <ClCompile Include="MemorySearch.cpp">
+      <Filter>Others</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseOffset.cpp">
+      <Filter>Game\Address</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OwnImGui.cpp">
+      <Filter>OwnImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Radar.cpp">
+      <Filter>Game\Radar</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameData.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Game\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="Bones.h">
+      <Filter>Game\Obj\Bone</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseOffset.h">
+      <Filter>Game\Address</Filter>
+    </ClInclude>
+    <ClInclude Include="GameView.h">
+      <Filter>Game\View</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>Others</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions.h">
+      <Filter>Others</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuConfig.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx11.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OwnImGui.h">
+      <Filter>OwnImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="AimBot.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Radar.h">
+      <Filter>Game\Radar</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.hpp">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
