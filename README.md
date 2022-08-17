@@ -8,6 +8,8 @@ This source just used to study how to code a simple CSGO external hack systemati
 
 And its includes many draw algorithms,aimbot algorithm. Both are very suitable for learning.
 
+并且包含了许多绘制、自瞄算法，都非常适合学习。
+
 ## Algorithm
 
 > 1. BoxESP
