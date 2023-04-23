@@ -46,7 +46,7 @@ void GetNext(short* next, WORD* Signature, WORD SignatureLength)
 		next[Signature[i]] = i;
 }
 
-void SearchMemoryBlock(HANDLE hProcess, WORD* Signature, WORD SignatureLength, DWORD64 StartAddress, DWORD size, std::vector<DWORD64>& ResultArray)
+void SearchMemoryBlock(HANDLE hProcess, WORD* Signature, WORD SignatureLength, DWORD64 StartAddress, DWORD size, std::vector<DWORD>& ResultArray)
 {
 	if (!ReadProcessMemory(hProcess, (LPCVOID)StartAddress, MemoryData, size, NULL))
 		return;
@@ -72,7 +72,7 @@ void SearchMemoryBlock(HANDLE hProcess, WORD* Signature, WORD SignatureLength, D
 }
 
 
-std::vector<DWORD64> Function::SearchMemory(HANDLE hProcess, char* Signature, DWORD64 StartAddress, DWORD64 EndAddress)
+std::vector<DWORD> Function::SearchMemory(HANDLE hProcess, char* Signature, DWORD StartAddress, DWORD EndAddress)
 {
 	MemoryData = new BYTE[BLOCKMAXSIZE];
 	int i = 0;
@@ -80,7 +80,7 @@ std::vector<DWORD64> Function::SearchMemory(HANDLE hProcess, char* Signature, DW
 	MEMORY_BASIC_INFORMATION mbi;
 	WORD SignatureLength = strlen(Signature) / 3 + 1;
 	WORD* SignatureArray = new WORD[SignatureLength];
-	std::vector<DWORD64>ResultArray;
+	std::vector<DWORD>ResultArray;
 	GetSignatureArray(Signature, SignatureArray);
 	GetNext(Next, SignatureArray, SignatureLength);
 

@@ -81,11 +81,10 @@ void DrawMain()
 	Radar.Opened = MenuConfig::Radar;
 
 	// 瞄准范围绘制
-	pGame->View->Gui->Circle(
-		{ (float)pGame->View->Gui->Window.Width / 2,(float)pGame->View->Gui->Window.Height / 2 },
-		AimControl::AimRange, ImColor(255, 255, 255, 255), 1);
+	Vec2 WindowCenter{ (float)pGame->View->Gui->Window.Width / 2,(float)pGame->View->Gui->Window.Height / 2 };
+	pGame->View->Gui->Circle(WindowCenter, AimControl::AimRange, ImColor(255, 255, 255, 255), 1);
 
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i <20; i++)
 	{
 		DWORD Address = Function::Read<DWORD>(pGame->Process.Client_Module + Base::EntityList + 16 * i);
 		if (Address == 0)
@@ -98,12 +97,16 @@ void DrawMain()
 		// 过滤本人
 		if (LocalEntity->EntityAddress == Entity.EntityAddress)
 			continue;
+
 		// 过滤队友
 		//if (LocalEntity->Camp == Entity.Camp)
 			//continue;
-
+			// 
 		// 添加到雷达
 		Radar.AddPoint(LocalEntity->Pos, LocalEntity->AngleX, Entity.Pos, ImColor(237, 85, 106, 200), MenuConfig::RadarType, Entity.AngleX);
+		// 预警指向
+		Render.WarningPoint(&Entity, LocalEntity, WindowCenter, 150, { 15,15 }, ImColor(255, 52, 66,170));
+
 		// 更新屏幕坐标数据
 		if (!Entity.UpDataScreenPos())
 			continue;
@@ -139,7 +142,7 @@ void DrawMain()
 			}
 		}
 	}
-
+	
 	// 雷达渲染
 	Radar.Render();
 

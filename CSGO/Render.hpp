@@ -20,7 +20,38 @@ public:
 	void CirCle3D_RainBow(const CEntity* Entity, const float Radius, const float ThickNess);
 	// 骨骼绘制
 	void DrawBone(CEntity* Entity, int Color);
+	// 预警指向绘制
+	void WarningPoint(const CEntity* Entity, const CEntity* Local, Vec2 Center, float Radius, Vec2 Size, ImColor Color);
 }Render;
+
+void WarningSingle(Vec2 Center, float Radius, float Angle, Vec2 Size, ImColor Color)
+{
+	Vec2 TopPoint = Center;
+
+	TopPoint.x += (Radius + Size.y) * cos(Angle / 180 * M_PI);
+	TopPoint.y += (Radius + Size.y) * sin(Angle / 180 * M_PI);
+
+	ImDrawList* DrawList = ImGui::GetForegroundDrawList();
+
+	DrawList->PathLineTo({ TopPoint.x,TopPoint.y });
+	DrawList->PathArcTo({ Center.x,Center.y }, Radius, (Angle - Size.x) / 180 * M_PI, (Angle + Size.x) / 180 * M_PI, 30);
+
+	DrawList->PathFillConvex(Color);
+
+	DrawList->PathLineTo({ TopPoint.x,TopPoint.y });
+	DrawList->PathArcTo({ Center.x,Center.y }, Radius, (Angle - Size.x) / 180 * M_PI, (Angle + Size.x) / 180 * M_PI, 30);
+
+	DrawList->PathStroke(Color, true, 2.5);
+}
+
+void CRender::WarningPoint(const CEntity* Entity, const CEntity* Local, Vec2 Center, float Radius, Vec2 Size, ImColor Color)
+{
+	float Angle = 0.f;
+	Angle = atan2f((Entity->Pos.y - Local->Pos.y),( Entity->Pos.x - Local->Pos.x)) * 180 / M_PI;
+	Angle = (Local->AngleX - Angle)-90;
+
+	WarningSingle(Center, Radius, Angle, Size, Color);
+}
 
 void CRender::DrawBone(CEntity* Entity, int Color)
 {
